@@ -13,5 +13,8 @@ mongoose.connect(process.env.MONGO_URL,{}).then(()=>{
 const postRoutes = require("./routes/post");
 app.use("/api/post", postRoutes);
 
+const authRoutes = require('./routes/auth');
+app.use('/api/auth', authRoutes);
+
 const port = process.env.PORT || 3000;
 app.listen(port, () => console.log(`Server Running on port ${port}`));
